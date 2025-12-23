@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<title>Flipbook Demo – Physics</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Turn.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
+
+<style>
+  body {
+    margin: 0;
+    background: #f4f1ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+  }
+
+  #flipbook-container {
+    width: 90vw;
+    max-width: 900px;
+    height: 600px;
+    background: #ddd;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    padding: 10px;
+  }
+
+  #flipbook {
+    width: 100%;
+    height: 100%;
+  }
+
+  #flipbook .page {
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .page-inner {
+    padding: 40px;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .page small {
+    display: block;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #666;
+  }
+
+  /* Mobile fix */
+  @media (max-width: 768px) {
+    #flipbook-container {
+      height: 500px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div id="flipbook-container">
+  <div id="flipbook">
+
+    <!-- Page 1 -->
+    <div class="page">
+      <div class="page-inner">
+        Η παγκοσμιότητα της ακτινοβολίας<br>
+        του μαύρου σώματος
+        <small>Demo Flip-Book – Σελίδα 1</small>
+      </div>
+    </div>
+
+    <!-- Page 2 -->
+    <div class="page">
+      <div class="page-inner">
+        Η ακτινοβολία που εκπέμπει ένα σώμα<br>
+        εξαρτάται μόνο από τη θερμοκρασία του
+        <small>Demo Flip-Book – Σελίδα 2</small>
+      </div>
+    </div>
+
+    <!-- Page 3 -->
+    <div class="page">
+      <div class="page-inner">
+        Η ανακάλυψη αυτή οδήγησε<br>
+        στη γέννηση της Κβαντικής Φυσικής
+        <small>Demo Flip-Book – Σελίδα 3</small>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  $("#flipbook").turn({
+    width: "100%",
+    height: "100%",
+    autoCenter: true,
+    elevation: 50,
+    gradients: true,
+    duration: 900
+  });
+</script>
+
+</body>
+</html>
